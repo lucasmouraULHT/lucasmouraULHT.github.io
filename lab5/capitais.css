@@ -1,0 +1,71 @@
+* {
+    margin:0;  
+    padding:0;  
+    box-sizing: border-box; /* medidas sao tomadas da borda */
+}
+
+#hdCap{
+    position: sticky;
+    display:flex;
+    justify-content:space-between;
+    background-color: rgb(215, 179, 179);
+
+}
+
+#navCap{
+    background-color: rgb(215, 179, 179);
+}
+#aCap{
+    text-decoration: none;
+    padding:20px;
+    color: rgb(0, 0, 156);
+}
+
+#poema {
+    background-color: rgb(255, 205, 205);
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    width: 100vw;
+    height: 50vh;             
+}
+
+#divArticlePoema {
+    text-align: center;
+}
+
+#cidades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+}
+
+.cidade-container {
+    display: flex;
+    align-items: center;
+    background-color: #e0e0e0;
+    border-radius: 25px;
+    margin: 10px;
+    padding: 10px;
+    width: 300px; /* Ajuste conforme necessário */
+    transition: background-color 0.3s ease;
+}
+
+.cidade-container:hover {
+    background-color: #d0d0d0;
+}
+
+.cidade-container img {
+    width: 120px; /* Ajuste o tamanho da imagem conforme necessário */
+    border-radius: 25px 0 0 25px;
+}
+
+.cidade-nome {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+    background-color: white;
+    border-radius: 0 25px 25px 0;
+}
