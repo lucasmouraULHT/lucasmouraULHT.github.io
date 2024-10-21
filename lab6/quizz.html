@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cidade</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="responsive.css">
+    </head>
+    <body class="grid-container">
+        
+        
+        <header id="header">
+            <h1>Kyoto - Layout Responsivo</h1>
+        </header>
+        <nav>
+            <a id="elem_a_nav" href="index.html">Home</a>
+            <a id="elem_a_nav" href="local.html">Localização</a>
+            <a id="elem_a_nav" href="multimedia.html">Multimédia</a>
+            <a id="elem_a_nav" href="info.html">Informação</a>
+            <a id="elem_a_nav" href="quizz.html">Quizz</a>
+            <a id="elem_a_nav" href="viagem.html">Viagem</a>
+            <a id="elem_a_nav" href="pontosinteresse.html">Pontos de Intersse</a>
+            <a id="elem_a_nav" href="capitais.html">Capitais</a>
+        </nav>
+
+        
+        <main>
+            <img src="/images/kyoto.jpg" style="width: 100%; border-radius: 10px;" alt="cidade: kyoto">
+            <h2>Quizz</h2>
+
+            <form method="get" action="https://postman-echo.com/get">
+                <fieldset>
+                    <legend>Formulário de Contato</legend>
+                        <section>
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Nome(名称)" required>
+                            
+                            <label for="apelido">Apelido:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Apelido(苗字)" required>
+
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Email(電子メール)" required>
+                        </section>
+                </fieldset>
+                <br>
+
+                <fieldset>
+                    <legend>Quiz de Kyoto</legend>
+                    
+                    <section>
+                        <p>Qual é o famoso templo de Kyoto conhecido por sua construção em madeira e vistas panorâmicas?</p>
+                        <label for="quizz1-a">
+                            <input type="radio" name="quizz1" id="quizz1-a" value="Tenryu-ji"> a) Tenryu-ji
+                        </label>
+                        <label for="quizz1-b">
+                            <input type="radio" name="quizz1" id="quizz1-b" value="Kinkaku-ji"> b) Kinkaku-ji
+                        </label>
+                        <label for="quizz1-c">
+                            <input type="radio" name="quizz1" id="quizz1-c" value="Ryoan-ji"> c) Ryoan-ji
+                        </label>
+                        <label for="quizz1-d">
+                            <input type="radio" name="quizz1" id="quizz1-d" value="Heian-jingu"> d) Heian-jingu
+                        </label>
+                    </section>
+                    <br>
+                    <section>
+                        <p>Qual é o templo famoso em Kyoto que é coberto de folhas de ouro?</p>
+                        <label for="quizz2-a">
+                            <input type="radio" name="quizz2" id="quizz2-a" value="Ryoan-ji"> a) Ryoan-ji
+                        </label>
+                        <label for="quizz2-b">
+                            <input type="radio" name="quizz2" id="quizz2-b" value="Ginkaku-ji"> b) Ginkaku-ji
+                        </label>
+                        <label for="quizz2-c">
+                            <input type="radio" name="quizz2" id="quizz2-c" value="Eikando"> c) Eikando
+                        </label>
+                        <label for="quizz2-d">
+                            <input type="radio" name="quizz2" id="quizz2-d" value="Tofuku-ji"> d) Tofuku-ji
+                        </label>
+                    </section>
+                    <br>
+                    <section>
+                        <p>Qual é o templo conhecido por seu belo jardim de pedras?</p>
+                        <label for="quizz3-a">
+                            <input type="radio" name="quizz3" id="quizz3-a" value="Nanzen-ji"> a) Nanzen-ji
+                        </label>
+                        <label for="quizz3-b">
+                            <input type="radio" name="quizz3" id="quizz3-b" value="Mitaki-dera"> b) Mitaki-dera
+                        </label>
+                        <label for="quizz3-c">
+                            <input type="radio" name="quizz3" id="quizz3-c" value="Daitoku-ji"> c) Daitoku-ji
+                        </label>
+                        <label for="quizz3-d">
+                            <input type="radio" name="quizz3" id="quizz3-d" value="Kiyomizu-dera"> d) Kiyomizu-dera
+                        </label>
+                    </section>
+                    <br>
+                    <section>
+                        <p>Qual é o famoso templo em Kyoto dedicado à deusa da misericórdia?</p>
+                        <label for="quizz4-a">
+                            <input type="radio" name="quizz4" id="quizz4-a" value="Nanzen-ji"> a) Nanzen-ji
+                        </label>
+                        <label for="quizz4-b">
+                            <input type="radio" name="quizz4" id="quizz4-b" value="Hōnen-in"> b) Hōnen-in
+                        </label>
+                        <label for="quizz4-c">
+                            <input type="radio" name="quizz4" id="quizz4-c" value="Phoenix Hall"> c) Phoenix Hall (Hōō-dō)
+                        </label>
+                        <label for="quizz4-d">
+                            <input type="radio" name="quizz4" id="quizz4-d" value="Kinkaku-ji"> d) Kinkaku-ji
+                        </label>
+                    </section>
+                    <br>
+                    <section>
+                        <p>Qual templo é conhecido por sua arquitetura e está situado em uma colina?</p>
+                        <label for="quizz5-a">
+                            <input type="radio" name="quizz5" id="quizz5-a" value="Nanzen-ji"> a) Nanzen-ji
+                        </label>
+                        <label for="quizz5-b">
+                            <input type="radio" name="quizz5" id="quizz5-b" value="Lotushō-ji"> b) Lotushō-ji
+                        </label>
+                        <label for="quizz5-c">
+                            <input type="radio" name="quizz5" id="quizz5-c" value="Tofuku-ji"> c) Tofuku-ji
+                        </label>
+                        <label for="quizz5-d">
+                            <input type="radio" name="quizz5" id="quizz5-d" value="Kiyomizu-dera"> d) Kiyomizu-dera
+                        </label>
+                    </section>
+                    <br>
+                    <section>
+                        <p>Qual templo famoso é conhecido por suas cerejeiras e festivais de flores?</p>
+                        <label for="quizz6-a">
+                            <input type="radio" name="quizz6" id="quizz6-a" value="Omuro Ninna-ji"> a) Omuro Ninna-ji
+                        </label>
+                        <label for="quizz6-b">
+                            <input type="radio" name="quizz6" id="quizz6-b" value="Tofuku-ji"> b) Tofuku-ji
+                        </label>
+                        <label for="quizz6-c">
+                            <input type="radio" name="quizz6" id="quizz6-c" value="Ryoan-ji"> c) Ryoan-ji
+                        </label>
+                        <label for="quizz6-d">
+                            <input type="radio" name="quizz6" id="quizz6-d" value="Kinkaku-ji"> d) Kinkaku-ji
+                        </label>
+                    </section>
+                    <br>
+
+                    <input type="submit">
+                </fieldset>
+            </form>
+ 
+        </main>
+        
+        <aside></aside>
+        <aside></aside>
+
+        <footer>
+            <p>Lucas Moura - Lusofona - 2024</p>
+        </footer>
+    </body>
+</html>

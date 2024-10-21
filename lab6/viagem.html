@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Kyoto</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="responsive.css">
+    </head>
+    <body class="grid-container">
+        <header id="header">
+            <h1>Kyoto - Layout Responsivo</h1>
+        </header>
+        <nav>
+            <a id="elem_a_nav" href="index.html">Home</a>
+            <a id="elem_a_nav" href="local.html">Localização</a>
+            <a id="elem_a_nav" href="multimedia.html">Multimédia</a>
+            <a id="elem_a_nav" href="info.html">Informação</a>
+            <a id="elem_a_nav" href="quizz.html">Quizz</a>
+            <a id="elem_a_nav" href="viagem.html">Viagem</a>
+            <a id="elem_a_nav" href="pontosinteresse.html">Pontos de Intersse</a>
+            <a id="elem_a_nav" href="capitais.html">Capitais</a>
+        </nav>
+
+        
+        <main>
+            <img src="/images/kyoto.jpg" style="width: 100%; border-radius: 10px;" alt="cidade: kyoto">
+            <h2>Viagem</h2>
+                <fieldset>
+                    <legend>Formulário de Viagem</legend>   
+                    <form method="get" action="https://postman-echo.com/get">
+
+                        <section>
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        
+                            <label for="apelido">Apelido:</label>
+                            <input type="text" id="apelido" name="apelido" placeholder="Digite seu apelido" required>
+                        
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                        </section>
+                        <br>
+                        <section>
+                            <label for="dataPartida">Data de partida:</label>
+                            <input type="date" id="dataPartida" name="dataPartida" required>
+                        
+                            <label for="dataRegresso">Data de regresso:</label>
+                            <input type="date" id="dataRegresso" name="dataRegresso" required>
+                        </section>
+                
+                        <section>
+                            <label for="numPassageiros">Número de passageiros:</label>
+                            <input type="number" id="numPassageiros" name="numPassageiros" min="1" placeholder="Número de passageiros" required>
+                        
+                            <label for="transporte">Meio de transporte favorito:</label>
+                            <select id="transporte" name="transporte">
+                                <option value="carro">Carro</option>
+                                <option value="comboio">Comboio</option>
+                                <option value="aviao">Avião</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                            <br><br>
+                            <label>Qual o serviço que deseja na sua viagem:</label>
+                            <label>
+                                <input type="radio" name="servico" value="basico" required> Básico
+                            </label>
+                            <label>
+                                <input type="radio" name="servico" value="premium"> Premium
+                            </label>
+                        </section>
+                        <br>
+                        <section>
+                            <label for="pedidosEspeciais">Pedidos especiais:</label>
+                            <textarea id="pedidosEspeciais" name="pedidosEspeciais" placeholder="Pedidos especiais aqui"></textarea>
+                        </section>
+                        <br>
+                        <section>
+                            <label for="valorPorPessoa">Valor esperado p/pessoa e p/dia:</label>
+                            <input type="number" id="valorPorPessoa" name="valorPorPessoa" placeholder="Valor:" required>
+                        </section>
+                
+                        <section>
+                            <input type="submit" value="Enviar">
+                        </section>
+                    </form>
+                </fieldset>
+ 
+                
+        </main>
+        
+        <aside></aside>
+        <aside></aside>
+
+        <footer>
+            <p>Lucas Moura - Lusofona - 2024</p>
+        </footer>
+    </body>
+</html>

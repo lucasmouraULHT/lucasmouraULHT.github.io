@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cidade</title>
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="responsive.css">
+    </head>
+    <body class="grid-container">
+        
+        
+        <header id="header">
+            <h1>Kyoto - Layout Responsivo</h1>
+        </header>
+        <nav>
+            <a id="elem_a_nav" href="index.html">Home</a>
+            <a id="elem_a_nav" href="local.html">Localização</a>
+            <a id="elem_a_nav" href="multimedia.html">Multimédia</a>
+            <a id="elem_a_nav" href="info.html">Informação</a>
+            <a id="elem_a_nav" href="quizz.html">Quizz</a>
+            <a id="elem_a_nav" href="viagem.html">Viagem</a>
+            <a id="elem_a_nav" href="pontosinteresse.html">Pontos de Intersse</a>
+            <a id="elem_a_nav" href="capitais.html">Capitais</a>
+        </nav>
+
+        
+        
+        <main>
+            <img src="/images/kyoto.jpg" style="width: 100%; border-radius: 10px;" alt="cidade: kyoto">
+            <section id="Multimedia" >
+                <h2>Multimedia</h2>
+                <p>
+                    <a id="linkFotografias" href="#Fotos">Fotografias</a>
+                    <a id="linkVideoMulti" href="#Video">Video</a>
+                    <a id="linkPoemaMulti" href="#Poema">Poema</a>
+                </p>
+            </section>
+            
+            <h3 id="Fotos">Fotografias</h3>
+
+            <section id="escolheFoto">
+                <p id="pFotosMultimedia">
+                    <a id="aFotosMultimedia" target="frameImg" href="/lab2/images/kyoto-in-autumn.jpg"><img src="/lab2/images/kyoto-in-autumn2.jpg" alt="kyoto autumn"></a>
+                    <a id="aFotosMultimedia" target="frameImg" href="/lab2/images/kyoto-in-winter.jpg"><img src="/lab2/images/kyoto-in-winter2.jpg" alt="kyoto winter"></a>
+                    <a id="aFotosMultimedia" target="frameImg" href="/lab2/images/Kyoto-in-summer.jpg"><img src="/lab2/images/Kyoto-in-summer2.jpg" alt="kyoto summer"></a> 
+                </p>
+            </section>
+
+            <section id="mostrarFotosMulti">
+                <iframe style="border-radius: 10px;" name="frameImg" width="600px" height="400px" frameborder="0"></iframe>
+            </section>
+            
+            <h3 id="Video">Video</h3>
+            <section id="iframeVideo">
+                <iframe id="iframeDoVideo" width="560" height="315" src="https://www.youtube.com/embed/7vxhBqDfwRA?si=6gO10dPZhTb4xZLu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+            
+            <h3 id="Poema">Poema</h3>
+            <pre class="poema">
+    Kyoto, terra de brisa e luz,
+    Onde o bambu sussurra e a alma seduz.
+    Templos dourados, espelhos de paz,
+    Nas águas serenas, o tempo desfaz.
+
+    Cerejeiras dançam ao vento de abril,
+    Folhas de outono, um tapete gentil.
+    No silêncio zen, a mente repousa,
+    Kyoto, eterna, em beleza nos pousa.
+            </pre>
+        </main>
+
+        <aside></aside>
+        <aside></aside>
+
+        <footer>
+            <p>DIW 2024</p>
+        </footer>
+    </body>
+</html>

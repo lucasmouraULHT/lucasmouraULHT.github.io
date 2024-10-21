@@ -1,0 +1,170 @@
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+    /* font-family: Arial, sans-serif; */
+
+}
+
+body{
+    background-color: rgb(237, 237, 237);
+    margin: 0;
+}
+
+#header{
+    background-color: rgb(152, 0, 0);
+    color: rgb(235, 228, 228);
+    padding: 40px;
+    text-align: center;
+}
+
+nav{
+    text-align: center;
+    background-color: rgb(226, 212, 212);
+}
+nav, #elem_a_nav{
+    background-color: rgb(196, 196, 196);
+    padding: 20px;
+    color: rgb(196, 38, 38);
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease; 
+}
+
+nav #elem_a_nav:hover {
+    color: white;
+}
+
+
+main{
+    background-color: white;
+    border-radius: 5px;
+    margin: 15px;
+    padding: 10px;
+}
+
+#Fotos,#Video,#Poema{
+    color: #af4c4c;
+    font-size: 24px;
+    border-bottom: 2px solid #af564c;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+#linkFotografias, #linkVideoMulti, #linkPoemaMulti{
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    color: #af4c4c;
+}
+#linkFotografias:hover, #linkVideoMulti:hover, #linkPoemaMulti:hover{
+    font-weight: bolder;
+    color: #820a0a;
+}
+
+
+#mostrarFotosMulti{
+    text-align: center;
+}
+
+#iframeVideo{
+    text-align: center;
+}
+#iframeDoVideo{
+    border-radius: 10px;
+}
+
+
+#escolheFoto{
+    text-align: center;
+    border: 1px solid #af564c;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 241, 241);
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+#pFotosMultimedia{
+    padding-bottom: 20px;
+}
+#aFotosMultimedia{
+    margin-inline: 100px;
+    border: 2px solid #af564c;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #af564c86;
+}
+
+#aFotosMultimedia:hover{
+    cursor: zoom-in;
+}
+
+
+
+
+#Multimedia{
+    text-align: center;
+
+}
+
+/* #mostrarFotosMulti{
+    border: 1px solid #af564c;
+    text-align: center;
+    padding: 10px;
+    
+} */
+
+
+footer{
+    color: white;
+    font-weight: bold;
+    background-color: rgb(43, 39, 39);
+    padding: 10px;
+    text-align: center;
+}
+
+
+label {
+    font-size: small;
+}
+
+input {
+    font-size: medium;
+}
+
+label, input {
+    margin-bottom: 10px;
+}
+
+.poema {
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* POI */
+#tabela-visitas {
+    width: 100%;
+    border-collapse: collapse;
+}
+#tabela-visitas th, #tabela-visitas td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+#tabela-visitas th {
+    background-color: #f2f2f2;
+}
+#tabela-visitas tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+#tabela-visitas tr:hover {
+    background-color: #e2e2e2;
+}
+#tabela-caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
