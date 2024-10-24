@@ -1,0 +1,235 @@
+
+/* -------- side menu -------- */
+@media screen and (max-width: 980px) {
+    header { grid-area: header-area; }
+    
+     nav { 
+        grid-area: nav-area;
+        display: flex;  
+        flex-direction: column; 
+        width: 100%;  
+     } 
+    main { grid-area: main-area; }
+    aside { grid-area: right-area; } 
+    footer { grid-area: footer-area; }
+    
+
+    .grid-container { 
+        grid-template-columns: 1fr;
+        display: grid; 
+        grid-template-areas: 'header-area header-area header-area'
+                             'nav-area main-area main-area ' 
+                             'footer-area footer-area footer-area';
+    }
+
+    nav a {
+        
+        padding: 10px; 
+        text-align: left; 
+    }
+                    
+}
+
+/* -------- mobile -------- */
+
+@media screen and (max-width: 600px) {
+    header { grid-area: header-area; }
+    
+     nav { 
+        grid-area: nav-area;
+        display: flex;  
+        flex-direction: column; 
+        width: 100%;  
+     } 
+    main { grid-area: main-area; }
+    aside { grid-area: right-area; } 
+    footer { grid-area: footer-area; }
+    
+
+    .grid-container { 
+        grid-template-columns: 1fr;
+        display: grid; 
+        grid-template-areas: 'header-area header-area header-area'
+                             'nav-area nav-area nav-area ' 
+                             'main-area main-area main-area ' 
+                             'footer-area footer-area footer-area';
+    }
+
+    nav a {
+        
+        padding: 10px; 
+        text-align: center; 
+    }
+                    
+}
+
+/* ------------------------ */
+/* -------- tabela  -------- */
+@media (max-width: 700px) {
+    /* Definir a tabela para ocupar toda a largura do viewport */
+    #tabela-visitas {
+      display: block;
+      
+    }
+  
+    /* Esconder o cabeçalho da tabela */
+    #tabela-visitas thead {
+      display: none;
+    }
+  
+    /* Cada linha da tabela será um bloco */
+    #tabela-visitas tbody tr {
+      display: block;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      width: 100%;
+      box-sizing: border-box; /* Garantir que padding não quebre o layout */
+    }
+  
+    /* Cada célula agora é tratada como um bloco */
+    #tabela-visitas tbody tr td {
+      display: block;
+      text-align: left;
+      padding: 8px 0;
+      width: 100%; /* Ocupar toda a largura */
+      box-sizing: border-box; /* Incluir padding na largura */
+    }
+  
+    /* Adicionar um pseudo-elemento para mostrar o rótulo de cada campo */
+    #tabela-visitas tbody tr td:before {
+      content: attr(id);
+      font-weight: bold;
+      display: block;
+      text-transform: capitalize;
+    }
+  
+    /* Remover o ID na frente das descrições para que o pseudo-elemento apareça limpo */
+    #tabela-visitas tbody tr td[id^="primavera-"]:before,
+    #tabela-visitas tbody tr td[id^="verao-"]:before,
+    #tabela-visitas tbody tr td[id^="outono-"]:before,
+    #tabela-visitas tbody tr td[id^="inverno-"]:before {
+      content: attr(id);
+      font-weight: normal;
+      display: none;
+    }
+  }
+  
+  
+
+/* ----------Multimedia -------------- */
+
+@media (max-width: 1510px) {
+    /* Ajustar a largura da seção escolheFoto para 100% */
+    #escolheFoto {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    /* Ajustar a margem e o padding das imagens */
+    #aFotosMultimedia {
+      margin-inline: 20px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  
+    /* Colocar as imagens em display block e centralizar */
+    #pFotosMultimedia {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: 15px;
+    }
+  
+    /* Ajustar o tamanho das imagens para caber em dispositivos menores */
+    #pFotosMultimedia a {
+      margin-bottom: 20px;
+    }
+  
+    #pFotosMultimedia img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 830px) and (min-width: 601px) {
+    /* Ajustar a seção para 100% e reduzir padding */
+    
+    #escolheFoto {
+      width: 90%;
+      padding: 10px;
+    }
+  
+    /* Ajustar a margem das imagens */
+    #aFotosMultimedia {
+      margin-inline: 10px;
+      padding: 5px;
+    }
+  
+    /* Flexbox para centralizar, ajustando espaço entre imagens */
+    #pFotosMultimedia {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-bottom: 10px;
+    }
+  
+    /* Reduzir o tamanho das imagens */
+    #pFotosMultimedia img {
+      max-width: 48%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    /* Em telas menores que 600px, as imagens ficam uma abaixo da outra */
+    #pFotosMultimedia {
+      display: block;
+      text-align: center;
+    }
+  
+    #pFotosMultimedia a {
+      display: inline-block;
+      margin: 10px 0;
+    }
+  
+    #pFotosMultimedia img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+
+  @media (max-width: 850px) {
+    #iframeDoVideo {
+      width: fit-content;
+    }
+  }
+  
+
+/* ------------------------ */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.iframe_local{
+    width: 50vw;
+    height: 50vh;
+
+}
