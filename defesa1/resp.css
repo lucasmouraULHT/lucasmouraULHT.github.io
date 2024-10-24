@@ -1,4 +1,7 @@
-  
+  html{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
+  }
   @media (max-width: 825px){
     header { grid-area: header-area; } 
     main { grid-area: main-area; }
