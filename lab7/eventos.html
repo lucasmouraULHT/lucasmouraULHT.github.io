@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Clique no Alvo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .game-container {
+      position: relative;
+      width: 80vw;
+      height: 80vh;
+      background-color: #ffffff;
+      border: 2px solid #333;
+      overflow: hidden;
+    }
+
+    .target {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: #ff0000;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .score {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <a href="/lab7/index.html">index</a>
+        <a href="/lab7/eventos.html">eventos</a>
+        <a href="/lab7/eventosChatGPT.html">eventosCHATGPT</a>
+    </nav>
+  <div id="videojogo" class="game-container">
+    <div class="score">Pontuação: <span id="score">0</span></div>
+    <div class="target" id="target"></div>
+  </div>
+
+  <script>
+    const target = document.getElementById("target");
+    const scoreDisplay = document.getElementById("score");
+    let score = 0;
+    let isKeyPressed = false;
+
+    function moveTarget() {
+        const gameContainer = document.querySelector(".game-container");
+        const containerWidth = gameContainer.clientWidth;
+        const containerHeight = gameContainer.clientHeight;
+        const targetSize = target.clientWidth;
+
+        const x = Math.random() * (containerWidth - targetSize);
+        const y = Math.random() * (containerHeight - targetSize);
+
+        target.style.left = `${x}px`;
+        target.style.top = `${y}px`;
+    }
+
+    function randomLightColor() {
+        const r = Math.floor(Math.random() * 156) + 100;
+        const g = Math.floor(Math.random() * 156) + 100;
+        const b = Math.floor(Math.random() * 156) + 100;
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key.toLowerCase() === "a") {
+            isKeyPressed = true;
+            target.style.transform = "scale(1.2)";
+        }
+    });
+
+    document.addEventListener("keyup", (event) => {
+        if (event.key.toLowerCase() === "a") {
+            isKeyPressed = false;
+            target.style.transform = "scale(1)";
+        }
+    });
+
+    target.addEventListener("click", () => {
+        if (isKeyPressed) {
+            score += 2;
+        } else {
+            score += 1;
+        }
+        
+        scoreDisplay.textContent = score;
+        moveTarget();
+        document.getElementById("videojogo").style.backgroundColor = randomLightColor();
+    });
+
+    target.addEventListener("mouseenter", () => {
+        target.style.transform = "scale(1.1)";
+    });
+
+    target.addEventListener("mouseleave", () => {
+        target.style.transform = "scale(1)";
+    });
+
+    moveTarget();
+  </script>
+</body>
+</html>

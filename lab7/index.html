@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <style>
+        body {
+            background-color: #e6e6fa;
+            font-family: Arial, sans-serif;
+        }
+        #passarTexto {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        #pintaTexto {
+            color: green;
+            font-weight: bold;
+        }
+        #experimentaEscrever {
+            padding: 5px;
+            border: 2px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/lab7/index.html">index</a>
+        <a href="/lab7/eventos.html">eventos</a>
+        <a href="/lab7/eventosChatGPT.html">eventosCHATGPT</a>
+    </nav>
+    <h1>Welcome to My Page</h1>
+    <p>Lorem Lorem Lorem</p>
+    <button id="button" >ola</button>
+
+    <script src="scripts/main.js"></script> 
+    
+    
+    <div id="passarTexto" onmouseover="mudarTexto()" onmouseout="reverterTexto()">1. Passa por aqui!</div>
+    
+    <div>
+        <span id="pintaTexto">2. Pinta-me!</span>
+        <button onclick="mudarCor('red')">Red</button>
+        <button onclick="mudarCor('green')">Green</button>
+        <button onclick="mudarCor('blue')">Blue</button>
+    </div>
+    
+    <div>
+        <label for="experimentaEscrever">3. Experimenta escrever...</label>
+        <input type="text" id="experimentaEscrever" oninput="mudarBackground()" onclick="mudarBorda()">
+    </div>
+    
+    <div>
+        <label for="escolhaCor">4. Escolha uma cor em inglês:</label>
+        <input type="text" id="escolhaCor">
+        <button onclick="mudarCorDeFundo()">submeter</button>
+    </div>
+    
+    <div>
+        <button onclick="incrementarContador()">Conta!</button> <span id="contador">33</span>
+    </div>
+
+
+</body>
+</html>
