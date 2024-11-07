@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .section {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        #mouseEvents, #keyboardEvents, #formEvents, #changeText {
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #e6e6fa;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/lab7/index.html">index</a>
+        <a href="/lab7/eventos.html">eventos</a>
+        <a href="/lab7/eventosChatGPT.html">eventosCHATGPT</a>
+    </nav>
+
+    <h1>Eventos JavaScript com addEventListener</h1>
+
+    <!-- Eventos de Rato -->
+    <div class="section">
+        <h2>Eventos de Rato</h2>
+        <button id="clickEvent">Clique (click)</button>
+        <button id="dbclickEvent">Clique Duplo (dblclick)</button>
+        <div id="mouseoverEvent">Passe o mouse aqui (mouseover e mouseout)</div>
+        <div id="mousemoveEvent">Mova o mouse aqui (mousemove)</div>
+    </div>
+
+    <!-- Eventos de Teclado -->
+    <div class="section">
+        <h2>Eventos de Teclado</h2>
+        <input type="text" id="keyboardEvents" placeholder="Digite algo...">
+    </div>
+
+    <!-- Eventos de Formulário -->
+    <div class="section">
+        <h2>Eventos de Formulário</h2>
+        <form id="formEvents">
+            <label for="selectChange">Escolha uma opção:</label>
+            <select id="selectChange">
+                <option value="opcao1">Opção 1</option>
+                <option value="opcao2">Opção 2</option>
+                <option value="opcao3">Opção 3</option>
+            </select>
+            <button type="submit">Enviar (submit)</button>
+        </form>
+    </div>
+
+    <!-- Alterar Elemento -->
+    <div class="section">
+        <h2>Alterar Elemento</h2>
+        <button id="changeTextContent">Mudar textContent</button>
+        <button id="changeInnerHTML">Mudar innerHTML</button>
+        <button id="changeStyle">Mudar Estilo</button>
+        <p id="changeText">Texto inicial</p>
+    </div>
+
+    <script>
+        // Eventos de Rato
+        document.getElementById("clickEvent").addEventListener("click", function() {
+            alert("Você clicou no botão!");
+        });
+
+        document.getElementById("dbclickEvent").addEventListener("dblclick", function() {
+            alert("Você deu um clique duplo!");
+        });
+
+        document.getElementById("mouseoverEvent").addEventListener("mouseover", function() {
+            this.style.backgroundColor = "lightblue";
+        });
+
+        document.getElementById("mouseoverEvent").addEventListener("mouseout", function() {
+            this.style.backgroundColor = "#e6e6fa";
+        });
+
+        document.getElementById("mousemoveEvent").addEventListener("mousemove", function(event) {
+            this.textContent = `Posição do mouse: X=${event.clientX}, Y=${event.clientY}`;
+        });
+
+        // Eventos de Teclado
+        document.getElementById("keyboardEvents").addEventListener("keydown", function(event) {
+            console.log(`Tecla pressionada: ${event.key}`);
+        });
+
+        document.getElementById("keyboardEvents").addEventListener("keyup", function(event) {
+            console.log(`Tecla liberada: ${event.key}`);
+        });
+
+        // Eventos de Formulário
+        document.getElementById("selectChange").addEventListener("change", function() {
+            alert(`Opção selecionada: ${this.value}`);
+        });
+
+        document.getElementById("formEvents").addEventListener("submit", function(event) {
+            event.preventDefault(); // Previne o envio do formulário
+            alert("Formulário enviado!");
+        });
+
+        // Alterar Elemento
+        document.getElementById("changeTextContent").addEventListener("click", function() {
+            document.getElementById("changeText").textContent = "Texto alterado com textContent!";
+        });
+
+        document.getElementById("changeInnerHTML").addEventListener("click", function() {
+            document.getElementById("changeText").innerHTML = "Texto alterado com <strong>innerHTML</strong>!";
+        });
+
+        document.getElementById("changeStyle").addEventListener("click", function() {
+            document.getElementById("changeText").style.color = "white";
+            document.getElementById("changeText").style.backgroundColor = "black";
+            document.getElementById("changeText").style.padding = "10px";
+        });
+    </script>
+
+</body>
+</html>
