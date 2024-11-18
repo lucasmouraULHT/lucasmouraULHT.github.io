@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+    if (!localStorage.getItem('produtos-selecionados')) {
+        localStorage.setItem('produtos-selecionados', JSON.stringify([]));
+    }
     carregarProdutos();
+    atualizaCesto();
 });
+
 
 let custoTotal = 0; // Inicializa o custo total
 
@@ -55,6 +60,21 @@ function carregarProdutos() {
 function addProdutosCarrinho(produto) {
     const produtosAdded = document.getElementById("produtosAdded");
 
+    const produtoDiv = criaProdutoCesto(produto);
+    produtosAdded.appendChild(produtoDiv);
+
+    // Atualiza a lista no localStorage
+    const produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados'));
+    produtosSelecionados.push(produto);
+    localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados));
+
+    // Atualiza o custo total
+    custoTotal += produto.price;
+    document.getElementById("custo").textContent = custoTotal.toFixed(2);
+}
+
+
+function criaProdutoCesto(produto) {
     const produtoDiv = document.createElement("div");
     produtoDiv.classList.add("produtoCesto");
 
@@ -72,23 +92,44 @@ function addProdutosCarrinho(produto) {
     pPreco.textContent = `Custo total: ${produto.price} €`;
     produtoDiv.appendChild(pPreco);
 
-    //BOATAO REMOVE
     const removeButton = document.createElement("button");
     removeButton.textContent = "- Remover do Cesto";
     removeButton.classList.add("removeButton");
+
+    // Event listener para remover o produto
     removeButton.addEventListener("click", () => {
-        
-        produtosAdded.removeChild(produtoDiv);
+        const produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados'));
+        const index = produtosSelecionados.findIndex(p => p.id === produto.id);
+        if (index !== -1) {
+            produtosSelecionados.splice(index, 1);
+            localStorage.setItem('produtos-selecionados', JSON.stringify(produtosSelecionados));
+        }
+
+        produtoDiv.remove();
+
         custoTotal -= produto.price;
         console.log(custoTotal);
-        if(custoTotal==0){
-            document.getElementById("custo").textContent = "";//tinha bug "-0.00"
+        if (custoTotal == 0) {//apenas == -> se for === da bug
+            document.getElementById("custo").textContent = "";//bug -0.00
         }
-        
         document.getElementById("custo").textContent = custoTotal.toFixed(2);
+        
     });
+
     produtoDiv.appendChild(removeButton);
-    produtosAdded.appendChild(produtoDiv);
-    custoTotal += produto.price;
+    return produtoDiv;
+}
+
+function atualizaCesto() {
+    const produtosAdded = document.getElementById("produtosAdded");
+    produtosAdded.innerHTML = ""; // Limpa os elementos atuais
+
+    const produtosSelecionados = JSON.parse(localStorage.getItem('produtos-selecionados'));
+    produtosSelecionados.forEach(produto => {
+        const produtoDiv = criaProdutoCesto(produto);
+        produtosAdded.appendChild(produtoDiv);
+        custoTotal += produto.price;
+    });
+
     document.getElementById("custo").textContent = custoTotal.toFixed(2);
 }
