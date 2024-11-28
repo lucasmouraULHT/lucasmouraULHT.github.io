@@ -201,3 +201,40 @@ function addProdutosCarrinho(produto) {
     custoTotal += produto.price;
     document.getElementById("custo").textContent = custoTotal.toFixed(2);
 }
+
+
+document.getElementById("comprarComDEISI").addEventListener("click", function (e) {
+    e.preventDefault(); // Impede o envio real do formulário
+
+    // Verifica se o checkbox está marcado
+    const alunoDeisiCheckbox = document.getElementById("alunoDeisi");
+    let desconto = 0;
+
+    if (alunoDeisiCheckbox.checked) {
+        desconto = custoTotal * 0.25; // Exemplo: 25% de desconto
+    }
+
+    const custoFinal = (custoTotal - desconto).toFixed(2);
+
+    const custoFinalBoldId = "custoFinalBold";
+    const referenciaPagamentoId = "referenciaPagamento";
+
+    // meter bold
+    let custoFinalP = document.getElementById(custoFinalBoldId);
+    if (!custoFinalP) {
+        custoFinalP = document.createElement("p");
+        custoFinalP.id = custoFinalBoldId;
+        custoFinalP.style.fontWeight = "bold";
+        document.getElementById("custoTotal").appendChild(custoFinalP);
+    }
+    custoFinalP.textContent = `Valor final a pagar (com eventuais descontos): ${custoFinal} €`;
+
+    // Localiza ou cria o elemento da referência de pagamento
+    let referenciaPagamentoP = document.getElementById(referenciaPagamentoId);
+    if (!referenciaPagamentoP) {
+        referenciaPagamentoP = document.createElement("p");
+        referenciaPagamentoP.id = referenciaPagamentoId;
+        referenciaPagamentoP.textContent = `Referência de pagamento: 201124-0049`; // Exemplo fixo, pode ser gerada dinamicamente
+        document.getElementById("custoTotal").appendChild(referenciaPagamentoP);
+    }
+});
