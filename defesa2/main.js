@@ -204,7 +204,7 @@ function addProdutosCarrinho(produto) {
     custoTotal += produto.price;
     document.getElementById("custo").textContent = custoTotal.toFixed(2);
 }
-//AQUI
+
 document.getElementById("butao").addEventListener("click", function (e) {
     e.preventDefault(); 
     produtosExibidos.forEach(produto => {
@@ -222,9 +222,9 @@ document.getElementById("butao").addEventListener("click", function (e) {
 });
 
 
-
+//AQUI
 document.getElementById("comprarComDEISI").addEventListener("click", function (e) {
-    e.preventDefault(); // Impede o envio real do formulário
+    //e.preventDefault(); // Impede o envio real do formulário
 
     // Verifica se o checkbox está marcado
     const alunoDeisiCheckbox = document.getElementById("alunoDeisi");
@@ -233,6 +233,7 @@ document.getElementById("comprarComDEISI").addEventListener("click", function (e
     if (alunoDeisiCheckbox.checked) {
         desconto = custoTotal * 0.25; // Exemplo: 25% de desconto
     }
+    let morada = getElementById("address").value;
 
     const custoFinal = (custoTotal - desconto).toFixed(2);
 
@@ -256,5 +257,6 @@ document.getElementById("comprarComDEISI").addEventListener("click", function (e
         referenciaPagamentoP.id = referenciaPagamentoId;
         referenciaPagamentoP.textContent = `Referência de pagamento: 201124-0049`; // Exemplo fixo, pode ser gerada dinamicamente
         document.getElementById("custoTotal").appendChild(referenciaPagamentoP);
+        document.getElementById("custoTotal").appendChild(morada);
     }
 });

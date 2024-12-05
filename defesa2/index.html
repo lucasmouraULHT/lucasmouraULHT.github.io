@@ -48,6 +48,7 @@
                     <b>Pesquisar</b>
                     <input type="text" name="pesquisarProduto" id="pesquisarProduto">
                     <input type="submit" id="butao" value="ADD TODOS CARRINHO">
+                    <input type="submit" id="menosInfo" value="Menos Info">
                 </span>
             </div>
             <article id="allProdutos">
@@ -62,9 +63,11 @@
             </aside>
 
             <aside id="custoTotal">
+                <!-- post? -->
                 <form method="/BUY">
                     Custo total: <span id="custo"></span>€
                     <p>És estudante do DEISI?<input type="checkbox" id="alunoDeisi" name="alunoDeisi" value="alunoDeisi"></p> 
+                    Morada: <input type="text" placeholder="Introduza morada" id="address">
                     <p>Cupao de desconto <input type="text"></p>
                     
                     <input type="submit" value="COMPRAR" id="comprarComDEISI">
