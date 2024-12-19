@@ -260,3 +260,7 @@ document.getElementById("comprarComDEISI").addEventListener("click", function (e
         document.getElementById("custoTotal").appendChild(morada);
     }
 });
+
+
+
+
